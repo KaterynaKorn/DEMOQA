@@ -9,20 +9,15 @@
         <version>${project.version}</version>
     </parent>
 
-    <artifactId>web-element</artifactId>
+    <artifactId>model</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <dependencies>
-        <!-- project dependencies    -->
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>model</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
