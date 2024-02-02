@@ -32,22 +32,23 @@ public class TextBoxTest {
     @Test
 public void compareFieldDataTest002(){
        String fillName = "Katya";
-       String fillEmail = "katya@g";
+       String fillEmail = "katya@gmail.com";
        String fillCurrent = "123";
        String fillPermanent = "321";
 
         TextBox sendData = new TextBox(browser);
         sendData.fillData(fillName, fillEmail, fillCurrent, fillPermanent);
-//        JavascriptExecutor js = (JavascriptExecutor) browser;
-//        js.executeScript("window.scrollBy(0,5000);");
-//        WebElement button = browser.findElement(By.cssSelector("#submit"));
-//        button.click();
+
+        JavascriptExecutor js = (JavascriptExecutor) browser;
+        js.executeScript("window.scrollBy(0,500);");
 
         sendData.clickSubmitButton();
+
         OutputInfo outputInfo = sendData.getOutputInfo();
-
-        Assertions.assertEquals(fillName,outputInfo.getName());
-
+        Assertions.assertEquals("Name:" + fillName,outputInfo.getName());
+        Assertions.assertEquals("Email:" + fillEmail,outputInfo.getEmail());
+        Assertions.assertEquals("Current Address :" + fillCurrent,outputInfo.getAddressCurrent());
+        Assertions.assertEquals("Permananet Address :" + fillPermanent,outputInfo.getAddressPermanent());
 
     }
 

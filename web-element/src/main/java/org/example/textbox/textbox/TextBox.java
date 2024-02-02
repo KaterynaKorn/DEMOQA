@@ -25,6 +25,9 @@ public class TextBox extends AbstractPage {
     @FindBy(id = "output")
     private WebElement outputInfo;
 
+//    @FindBy(id = "name")
+//    private WebElement name;
+
 
     public TextBox(WebDriver driver) {
         super(driver);
@@ -49,10 +52,12 @@ public class TextBox extends AbstractPage {
     public OutputInfo getOutputInfo(){
 
         OutputInfo output = new OutputInfo();
+//        output.setName(name.getText());
+//        System.out.println(name.getText());
         output.setName(outputInfo.findElement(By.id("name")).getText());
         output.setEmail(outputInfo.findElement(By.id("email")).getText());
         output.setAddressCurrent(outputInfo.findElement(By.id("currentAddress")).getText());
-        output.setAddressPermanent(outputInfo.findElement(By.id("")).getText());
+        output.setAddressPermanent(outputInfo.findElement(By.id("permanentAddress")).getText());
 
         return output;
     }
