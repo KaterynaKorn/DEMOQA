@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.example</groupId>
     <artifactId>DEMOQA</artifactId>
     <version>${project.version}</version>
@@ -24,10 +23,12 @@
         <junit-jupiter-api>5.10.1</junit-jupiter-api>
         <allure-junit5>2.25.0</allure-junit5>
         <lombok.version>1.18.30</lombok.version>
+        <allure.version>2.25.0</allure.version>
+        <aspectj.version>1.9.21</aspectj.version>
     </properties>
     <dependencyManagement>
         <dependencies>
- <!-- project dependencies    -->
+            <!-- project dependencies    -->
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>bookstore_api</artifactId>
@@ -49,7 +50,7 @@
                 <version>${project.version}</version>
             </dependency>
 
-<!--     base dependency -->
+            <!--     base dependency -->
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-java</artifactId>
@@ -62,16 +63,43 @@
                 <scope>provided</scope>
             </dependency>
 
-<!--       test dependency -->
+            <!--       test dependency -->
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>${junit-jupiter-api}</version>
                 <scope>test</scope>
             </dependency>
+            <!--other -->
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-junit5</artifactId>
+                <version>2.25.0</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
+        <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.3</version>
+            <configuration>
+                <argLine>
+                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                </argLine>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>org.aspectj</groupId>
+                    <artifactId>aspectjweaver</artifactId>
+                    <version>${aspectj.version}</version>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </plugin>
+        </plugins>
 
     </build>
 

@@ -1,4 +1,4 @@
-package org.example.textbox.textbox;
+package textbox;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

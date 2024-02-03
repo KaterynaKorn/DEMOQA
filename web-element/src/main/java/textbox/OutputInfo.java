@@ -1,4 +1,4 @@
-package org.example.textbox.textbox;
+package textbox;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,4 +10,5 @@ public class OutputInfo {
     private String email;
     private String addressCurrent;
     private String addressPermanent;
+//    private String output;
 }

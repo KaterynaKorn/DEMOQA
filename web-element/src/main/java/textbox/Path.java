@@ -1,4 +1,4 @@
-package org.example.textbox.textbox;
+package textbox;
 
 import org.example.ConfigProvider;
 

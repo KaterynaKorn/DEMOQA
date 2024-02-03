@@ -1,14 +1,9 @@
-package org.example.textbox.textbox;
+package textbox;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TextBox extends AbstractPage {
 
@@ -24,10 +19,6 @@ public class TextBox extends AbstractPage {
     private WebElement submitButton;
     @FindBy(id = "output")
     private WebElement outputInfo;
-
-//    @FindBy(id = "name")
-//    private WebElement name;
-
 
     public TextBox(WebDriver driver) {
         super(driver);
@@ -52,8 +43,6 @@ public class TextBox extends AbstractPage {
     public OutputInfo getOutputInfo(){
 
         OutputInfo output = new OutputInfo();
-//        output.setName(name.getText());
-//        System.out.println(name.getText());
         output.setName(outputInfo.findElement(By.id("name")).getText());
         output.setEmail(outputInfo.findElement(By.id("email")).getText());
         output.setAddressCurrent(outputInfo.findElement(By.id("currentAddress")).getText());
