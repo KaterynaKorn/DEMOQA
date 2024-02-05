@@ -5,6 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.NoSuchElementException;
+
 public class TextBox extends AbstractPage {
 
     @FindBy(id = "userName")
@@ -20,6 +24,9 @@ public class TextBox extends AbstractPage {
     @FindBy(id = "output")
     private WebElement outputInfo;
 
+    @FindBy(id = "name")
+    private WebElement name;
+
     public TextBox(WebDriver driver) {
         super(driver);
     }
@@ -29,18 +36,18 @@ public class TextBox extends AbstractPage {
         openPage(Path.TEXTBOX_URL);
     }
 
-    public void clickSubmitButton(){
+    public void clickSubmitButton() {
         submitButton.click();
     }
 
-    public void fillData(String fillName, String fillEmail, String fillCurrentAddress, String fillPermanentAddress){
+    public void fillData(String fillName, String fillEmail, String fillCurrentAddress, String fillPermanentAddress) {
         userName.sendKeys(fillName);
         userEmail.sendKeys(fillEmail);
         currentAddress.sendKeys(fillCurrentAddress);
         permanentAddress.sendKeys(fillPermanentAddress);
     }
 
-    public OutputInfo getOutputInfo(){
+    public OutputInfo getOutputInfo() {
 
         OutputInfo output = new OutputInfo();
         output.setName(outputInfo.findElement(By.id("name")).getText());
@@ -50,4 +57,5 @@ public class TextBox extends AbstractPage {
 
         return output;
     }
+
 }

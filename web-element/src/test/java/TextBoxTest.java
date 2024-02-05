@@ -1,6 +1,9 @@
 
+import io.qameta.allure.Description;
 import org.example.ConfigProvider;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import textbox.OutputInfo;
 import textbox.TextBox;
 import org.junit.jupiter.api.AfterEach;
@@ -28,6 +31,7 @@ public class TextBoxTest {
     }
 
     @Test
+    @Description("Compare field data - Test 002")
 public void compareFieldDataTest002(){
        String fillName = "Katya";
        String fillEmail = "katya@gmail.com";
@@ -50,10 +54,11 @@ public void compareFieldDataTest002(){
 
     }
 
-//    @Test
+    @Test
+    @Description ("Not Correct Email - Test003")
     public void notCorrectEmailTest003(){
         String fillName = "Katya";
-        String fillEmail = "katya@gm";
+        String fillEmail = "mas@gmai";
         String fillCurrent = "123";
         String fillPermanent = "321";
 
@@ -64,6 +69,10 @@ public void compareFieldDataTest002(){
         js.executeScript("window.scrollBy(0,500);");
 
         sendData.clickSubmitButton();
+        Assertions.assertThrows(NoSuchElementException.class, () ->{sendData.getOutputInfo();
+        });
+
+
 
 
     }

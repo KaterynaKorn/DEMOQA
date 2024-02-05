@@ -25,6 +25,9 @@
         <lombok.version>1.18.30</lombok.version>
         <allure.version>2.25.0</allure.version>
         <aspectj.version>1.9.21</aspectj.version>
+        <testng.version>7.9.0</testng.version>
+        <selenide.version>7.0.6</selenide.version>
+        <junit-jupiter-engine.version>5.10.2</junit-jupiter-engine.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -57,6 +60,11 @@
                 <version>${selenium}</version>
             </dependency>
             <dependency>
+                <groupId>com.codeborne</groupId>
+                <artifactId>selenide</artifactId>
+                <version>${selenide.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
@@ -68,6 +76,18 @@
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>${junit-jupiter-api}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit-jupiter-engine.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
                 <scope>test</scope>
             </dependency>
             <!--other -->
