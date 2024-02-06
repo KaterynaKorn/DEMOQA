@@ -25,6 +25,19 @@
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+        </dependency>
+        <!-- project dependencies    -->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>model</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

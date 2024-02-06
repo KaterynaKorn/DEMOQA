@@ -28,6 +28,8 @@
         <testng.version>7.9.0</testng.version>
         <selenide.version>7.0.6</selenide.version>
         <junit-jupiter-engine.version>5.10.2</junit-jupiter-engine.version>
+        <cucumber-java.version>7.15.0</cucumber-java.version>
+        <cucumber-testng.version>7.15.0</cucumber-testng.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -89,6 +91,16 @@
                 <artifactId>testng</artifactId>
                 <version>${testng.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-java</artifactId>
+                <version>${cucumber-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-testng</artifactId>
+                <version>${cucumber-testng.version}</version>
             </dependency>
             <!--other -->
             <dependency>
