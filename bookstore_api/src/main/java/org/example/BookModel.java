@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class BookModel {
-    private final String userID;
+    private final String userId;
     private final String collectionOfIsbns;
 }
