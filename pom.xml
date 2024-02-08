@@ -30,6 +30,9 @@
         <junit-jupiter-engine.version>5.10.2</junit-jupiter-engine.version>
         <cucumber-java.version>7.15.0</cucumber-java.version>
         <cucumber-testng.version>7.15.0</cucumber-testng.version>
+        <rest-assured.version>5.4.0</rest-assured.version>
+        <jackson-dataformat-xml.version>2.16.0</jackson-dataformat-xml.version>
+        <jackson-datatype-jsr310.version>2.16.1</jackson-datatype-jsr310.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -72,6 +75,16 @@
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${jackson-dataformat-xml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson-datatype-jsr310.version}</version>
+            </dependency>
 
             <!--       test dependency -->
             <dependency>
@@ -101,6 +114,12 @@
                 <groupId>io.cucumber</groupId>
                 <artifactId>cucumber-testng</artifactId>
                 <version>${cucumber-testng.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>rest-assured</artifactId>
+                <version>${rest-assured.version}</version>
+                <scope>test</scope>
             </dependency>
             <!--other -->
             <dependency>
