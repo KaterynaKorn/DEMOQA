@@ -24,10 +24,8 @@ public class BookStore {
         return bookName;
     }
 
-//    Selenide.closeWebDriver();
-//    SelenideElement bookGit = Selenide.$(By.id("see-book-Git Pocket Guide"));
 //    bookGit.scrollIntoView("");
 //    bookGit.pressEnter();
 //    bookGit.shouldBe();
-//    SelenideElement bookGit = Selenide.$(By.id("see-book-Git Pocket Guide"));
+
 }

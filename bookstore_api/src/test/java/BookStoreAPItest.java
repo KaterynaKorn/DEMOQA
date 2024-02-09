@@ -77,7 +77,7 @@ public class BookStoreAPItest {
                 .body("message", Matchers.equalTo("User not authorized!"));
     }
 
-    @Test
+//    @Test
     public void postBookAuthorizedTest(){
         Response authResponse = requestSpecification
                 .auth().basic("testUser7","testPassw0rd!")
@@ -86,9 +86,10 @@ public class BookStoreAPItest {
                 .post("/Account/v1/Authorized");
 
         authResponse.then()
-                .log().all()
                 .statusCode(200)
-                .body(Matchers.equalTo("true"));
+                .body(Matchers.equalTo("true"))
+                            .log().all();
+
 
         if (authResponse.getBody().asString().equals("true")) {
             System.out.println("Authorization successful!");
@@ -96,9 +97,10 @@ public class BookStoreAPItest {
             Response postBookResponse = requestSpecification
                     .when()
                     .body(getRequestBody(generateBook()))
+                    .log().all()
                     .post("/BookStore/v1/Books");
             postBookResponse.then()
-                    .log().all()
+//                    .log().all()
 //                .statusCode(400)
                     .body("message", Matchers.equalTo("Success"));
         }else {

@@ -10,5 +10,4 @@ public class OutputInfo {
     private String email;
     private String addressCurrent;
     private String addressPermanent;
-//    private String output;
 }
