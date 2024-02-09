@@ -19,8 +19,4 @@ public abstract class AbstractPage {
         driver.get(url);
     }
 
-    public void scrollPage(WebDriver driver){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,3000);");
-    }
 }
